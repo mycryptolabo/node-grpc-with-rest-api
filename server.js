@@ -1,6 +1,6 @@
-const grpc = require("@grpc/grpc-js");
-const PROTO_PATH = "./news.proto";
-var protoLoader = require("@grpc/proto-loader");
+const grpc = require('@grpc/grpc-js');
+const PROTO_PATH = './news.proto';
+var protoLoader = require('@grpc/proto-loader');
 
 const options = {
     keepCase: true,
@@ -25,10 +25,10 @@ server.addService(newsProto.NewsService.service, {
 });
 
 server.bindAsync(
-    "127.0.0.1:50052",
+    '127.0.0.1:50052',
     grpc.ServerCredentials.createInsecure(),
     (error, port) => {
-        console.log("Server running at http://127.0.0.1:50052");
+        console.log('Server running at http://127.0.0.1:50052');
         server.start();
     }
 );

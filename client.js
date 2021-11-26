@@ -1,6 +1,6 @@
-const grpc = require("@grpc/grpc-js");
-var protoLoader = require("@grpc/proto-loader");
-const PROTO_PATH = "./news.proto";
+const grpc = require('@grpc/grpc-js');
+var protoLoader = require('@grpc/proto-loader');
+const PROTO_PATH = './news.proto';
 
 const options = {
     keepCase: true,
@@ -19,10 +19,4 @@ const client = new NewsService(
     grpc.credentials.createInsecure()
 );
 
-client.getAllNews({}, (error, news) => {
-    if (!error) {
-        console.log(news)
-    } else {
-        console.error(error)
-    }
-});
+module.exports = client;
