@@ -6,7 +6,7 @@ service NewsService {
 
 message Empty {}
 message NewsList {
-   repeated News news = 1;
+    repeated News news = 1;
 }
 message News {
     string id = 1;
