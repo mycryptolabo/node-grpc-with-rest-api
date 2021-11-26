@@ -2,6 +2,10 @@ syntax = "proto3";
 
 service NewsService {
     rpc GetAllNews (Empty) returns (NewsList) {}
+    rpc GetNews (NewsRequestId) returns (News) {}
+    rpc AddNews (News) returns (News) {}
+    rpc EditNews (News) returns (News) {}
+    rpc DeleteNews (NewsRequestId) returns (Empty) {}
 }
 
 message Empty {}
@@ -13,4 +17,7 @@ message News {
 }
 message NewsList {
     repeated News news = 1;
+}
+message NewsRequestId {
+    string id = 1;
 }
