@@ -13,9 +13,9 @@ var packageDefinition = protoLoader.loadSync(PROTO_PATH, options);
 const newsProto = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
-let news = [
-    { id: "1", title: "Note 1", body: "Content 1", postImage: "Post image 1" },
-    { id: "2", title: "Note 2", body: "Content 2", postImage: "Post image 2" },
+const news = [
+    { id: '1', title: 'Note 1', body: 'Content 1', postImage: 'Post image 1' },
+    { id: '2', title: 'Note 2', body: 'Content 2', postImage: 'Post image 2' }
 ];
 
 server.addService(newsProto.NewsService.service, {
@@ -25,10 +25,10 @@ server.addService(newsProto.NewsService.service, {
 });
 
 server.bindAsync(
-    "127.0.0.1:50051",
+    "127.0.0.1:50052",
     grpc.ServerCredentials.createInsecure(),
     (error, port) => {
-        console.log("Server running at http://127.0.0.1:50051");
+        console.log("Server running at http://127.0.0.1:50052");
         server.start();
     }
 );

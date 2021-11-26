@@ -5,12 +5,12 @@ service NewsService {
 }
 
 message Empty {}
-message NewsList {
-    repeated News news = 1;
-}
 message News {
     string id = 1;
     string title = 2;
     string body = 3;
     string postImage = 4;
+}
+message NewsList {
+    repeated News news = 1;
 }
